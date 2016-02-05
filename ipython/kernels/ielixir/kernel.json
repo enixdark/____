@@ -1,0 +1,5 @@
+{
+  "argv": ["~/GIT/IElixir/start_script.sh", "{connection_file}"],
+  "display_name": "ielixir",
+  "language": "Elixir"
+}

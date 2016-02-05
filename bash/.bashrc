@@ -9,7 +9,6 @@ fi
 # export SYSTEMD_PAGER=
 
 
-export ATLAS_TOKEN="M2JfgpZZ3PA38A.atlasv1.yMRqs6vXCV0rW9V5AgKj8TGtt8pz87Keb3ZHNreTzYqS0aWeSX4Hhisc7w9E3F9NPcU"
 # User specific aliases and functions
 export CAPSTAN_QEMU_PATH=/usr/bin
 export RABBITMQ_HOME=/usr/local/rabbitmq
