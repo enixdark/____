@@ -21,6 +21,15 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'taglist.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattreduce/vim-mix'
+Plugin 'jimenezrick/vimerl'
+Plugin 'derekwyatt/vim-scala'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " show existing tab with 4 spaces width
