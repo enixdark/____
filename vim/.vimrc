@@ -8,21 +8,30 @@ set runtimepath^=~/.vim/bundle/vim-erlang-runtime/
 syntax enable
 "set background=dark
 set number
-colorscheme inkpot
-
+"enable mouse support
+set mouse=a
+let g:neocomplete#enable_at_startup = 1
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'L9'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'FuzzyFinder'
 Plugin 'taglist.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'Chiel92/vim-autoformat'
@@ -30,6 +39,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 Plugin 'jimenezrick/vimerl'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'VimClojure'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " show existing tab with 4 spaces width
