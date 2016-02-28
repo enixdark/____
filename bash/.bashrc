@@ -125,6 +125,8 @@ export BIN=.:~/bin
 export RABBITMQ_HOME=/usr/local/rabbitmq
 export CASSANDRA_HOME=/usr/local/cassandra
 export ELASTICKSEARCH_HOME=/usr/local/elasticksearch
+export KIBANA_HOME=/usr/local/kibana
+export LOGSTASH_HOME=/usr/local/logstash
 export HADOOP_HOME=/usr/local/hadoop/
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_73/
 export SPARK_HOME=/usr/local/spark
@@ -164,7 +166,7 @@ export RUST_HOME=/usr/local/rust/rustc
 #export JAVA_OPTS="-agentlib:TakipiAgent -Xmx128m -XX:+UseConcMarkSweepGC"
 #export JAVA_OPTS="$JAVA_OPTS -agentlib:TakipiAgent"
 alias gremlin=$TITAN_HOME/bin/gremlin.sh
-export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTICKSEARCH_HOME/bin:$RABBITMQ_HOME/sbin:$CASSANDRA_HOME/bin:$MONGODB_HOME/bin:$TYPESAFE:$SBT:$NEO4J_HOME/bin:$TITAN_HOME/bin:$ELIXIR_HOME/bin:$REBAR:$TOMCAT_HOME/bin:$JENAROOT/bin:$GATE_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin:$CLOJURE_HOME/bin:$RUST_HOME/bin:$BIN
+export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTICKSEARCH_HOME/bin:$RABBITMQ_HOME/sbin:$CASSANDRA_HOME/bin:$MONGODB_HOME/bin:$TYPESAFE:$SBT:$NEO4J_HOME/bin:$TITAN_HOME/bin:$ELIXIR_HOME/bin:$REBAR:$TOMCAT_HOME/bin:$JENAROOT/bin:$GATE_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin:$CLOJURE_HOME/bin:$RUST_HOME/bin:$BIN:$KIBANA_HOME/bin:$LOGSTASH_HOMe/bin
 
 
 
@@ -176,3 +178,4 @@ export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTIC
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.10.3/bin:$PATH"
+source ~/.rvm/scripts/rvm

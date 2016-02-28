@@ -10,11 +10,46 @@ syntax enable
 set number
 "enable mouse support
 set mouse=a
+set regexpengine=1
+
+
+"enable solarized
+"set background=light
+"colorscheme solarized
+"let g:solarized_termcolors=256
+
+"enabler ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+"enable for neocomplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"
+" " Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
+    let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
+
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'L9'
+Plugin 'moll/vim-node'
+Plugin 'ervandew/supertab'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'git://git.wincent.com/command-t.git'
@@ -64,6 +99,14 @@ let g:indent_guides_guide_size = 1
 "hi IndentGuidesEven ctermbg=lightgrey
 
 let g:EasyMotion_smartcase=1
+
+"enable for emmet
+let g:user_emmet_install_global = 0
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key='<C-Z>'
+autocmd FileType html,css EmmetInstall
+
+
 set tabstop=4
 " " when indenting with '>', use 4 spaces width
 set shiftwidth=4
