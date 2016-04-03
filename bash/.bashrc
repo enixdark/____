@@ -116,18 +116,34 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#export Kubernetes config with vagrant and some plugin vagant-paralles
+#export VAGRANT_DEFAULT_PROVIDER=vagrant-parallels
+export KUBERNETES_PROVIDER=vagrant
+#export VAGRANT_DEFAULT_PROVIDER=virtualbox
+#export mesos through compile to use lib
+export MESOS_NATIVE_LIBRARY=/usr/local/lib/libmesos.so
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/cqshinn/.sdkman"
 [[ -s "/home/cqshinn/.sdkman/bin/sdkman-init.sh" ]] && source "/home/cqshinn/.sdkman/bin/sdkman-init.sh"
-
+#use ierlang with notebook
+#export ERL_LIBS=/usr/local/erlzmq2:$ERL_LIBS
+#export IERLANG=/usr/local/ierlang
 #export CAPSTAN_QEMU_PATH=/usr/bin
 export BIN=.:~/bin
+export GOROOT=/usr/local/go
+export GOPATH=/usr/local/godep
+#export LUA
+#export MARATHON_HOME=/usr/local/marathon
+export CHRONOS_HOME=/usr/local/chronos
+export STORM_HOME=/usr/local/storm
 export RABBITMQ_HOME=/usr/local/rabbitmq
 export CASSANDRA_HOME=/usr/local/cassandra
 export ELASTICKSEARCH_HOME=/usr/local/elasticksearch
 export KIBANA_HOME=/usr/local/kibana
 export LOGSTASH_HOME=/usr/local/logstash
-export HADOOP_HOME=/usr/local/hadoop/
+#export HADOOP_HOME=/usr/local/hadoop/
+export HADOOP_HOME=~/hadoop-2.5.0-cdh5.2.0 #export hadoop path with cloudera 5.2 to use mesos
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_73/
 export SPARK_HOME=/usr/local/spark
 export NODE_HOME=/usr/local/nodejs
@@ -140,12 +156,10 @@ export NEO4j_HOME=/usr/local/neo4j
 export TITAN_HOME=/usr/local/titandb
 #export _JAVA_OPTIONS '-Duser.home=/usr/home/cqshinn'
 export ELIXIR_HOME=/usr/local/elixir
-export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=/usr/local/hadoop/lib/native"
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/hadoop/lib/native
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib:.
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native:/usr/local/lib:/usr/lib:.
 #export CATALINA_OPTS="$CATALINA_OPTS -agentlib:TakipiAgent"
 #export TOMCAT_HOME=/usr/local/tomcat
 export JENAROOT=/usr/local/jena/jena
@@ -166,7 +180,9 @@ export RUST_HOME=/usr/local/rust/rustc
 #export JAVA_OPTS="-agentlib:TakipiAgent -Xmx128m -XX:+UseConcMarkSweepGC"
 #export JAVA_OPTS="$JAVA_OPTS -agentlib:TakipiAgent"
 alias gremlin=$TITAN_HOME/bin/gremlin.sh
-export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTICKSEARCH_HOME/bin:$RABBITMQ_HOME/sbin:$CASSANDRA_HOME/bin:$MONGODB_HOME/bin:$TYPESAFE:$SBT:$NEO4J_HOME/bin:$TITAN_HOME/bin:$ELIXIR_HOME/bin:$REBAR:$TOMCAT_HOME/bin:$JENAROOT/bin:$GATE_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin:$CLOJURE_HOME/bin:$RUST_HOME/bin:$BIN:$KIBANA_HOME/bin:$LOGSTASH_HOMe/bin
+export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTICKSEARCH_HOME/bin:$RABBITMQ_HOME/sbin:$CASSANDRA_HOME/bin:$MONGODB_HOME/bin:$TYPESAFE:$SBT:$NEO4J_HOME/bin:$TITAN_HOME/bin:$ELIXIR_HOME/bin:$REBAR:$TOMCAT_HOME/bin:$JENAROOT/bin:$GATE_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin:$CLOJURE_HOME/bin:$RUST_HOME/bin:$BIN:$KIBANA_HOME/bin:$LOGSTASH_HOME/bin:$STORM_HOME/bin:$GOPATH:$GOROOT/bin:$CHRONOS_BIN:$ERL_LIBS:$IERLANG
+
+
 
 
 
@@ -179,3 +195,12 @@ export PATH=$PATH:$SUBL:$NODE_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin:$ELASTIC
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.10.3/bin:$PATH"
 source ~/.rvm/scripts/rvm
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/cqshinn/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/cqshinn/google-cloud-sdk/completion.bash.inc'
+
+# To avoid keyboard in terminate with enter such ^M
+stty icrnl
